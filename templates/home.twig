@@ -1,0 +1,189 @@
+{% extends "layouts/default.twig" %}
+
+{% block body %}
+
+{% include 'includes/home-slider.twig' %}
+
+<!-- ==== Page Content ==== -->
+<!-- Section services -->
+<section id="services" class="dog-bg1">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>Our Services</h2>
+        </div>
+
+        <!-- /Section-heading -->
+        <div class="container block-padding pt-0">
+            <div class="row">
+                <div class="col-xl-6">
+                    <h3>Caring for your pets!</h3>
+
+                    <p>We offer intensive pet care that is undertaken with the same level of attention that we would give our own dogs.</p>
+                    <!-- ul custom-->
+                    <ul class="custom pl-0">
+                        <li>Open all year round</li>
+                        <li>Fully licensed by Local Authority</li>
+                        <li>Veterinary Approved</li>
+                        <li>Special diets and medical needs catered for</li>
+                        <li>Long or short-term boarding</li>
+                        <li>Professional pet grooming</li>
+                    </ul>
+                </div>
+                <!-- /col-xl-->
+                <div class="col-xl-6">
+                    <img src="img/services2.jpg" alt=""   data-aos="fade-down"  data-aos-duration="1500"  class="img-fluid border-irregular1 border-double">
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+
+        {% include 'includes/home-services.twig'%}
+
+    </div>
+    <!-- /container -->
+</section>
+<!-- / Section Ends -->
+
+
+<!-- Section About Us -->
+<section id="about" class="dog-bg2 pt-0">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>About Us</h2>
+        </div>
+        <!-- /Section-heading -->
+    </div>
+    <!-- /container -->
+    <div class="container block-padding pt-0">
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Family run business</h3>
+
+                <p>Gray's kennels were established in 1966. After 30 years we relocated the kennels to Jeffrey's Wood so my parents could retire. With our expertise we then built brand new state of the art kennels within 25 acres of idyllic meadows and woodland.</p>
+
+
+                <h3>Inspections welcome</h3>
+
+                <p>Leaving a dog in kennels can be worrying for pet owners, so we welcome any dog owners who wish to inspect our facilities before booking or to contact us for further information.</p>
+
+                <p>Please call in to have a look around or <a href="#">contact us for more information</a>.</p>
+            </div>
+            <!-- image -->
+            <div class="col-lg-6">
+                <img src="img/about2.jpg" alt="" class="img-fluid border-irregular1"   data-aos="zoom-in">
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /block-padding -->
+
+    <div class="container bottom-block-padding">
+        <h3 class="text-center">What our customers say</h3>
+        <div class="col-md-12">
+            {% set testimonials = [
+                {'title': 'Mr Wilson', 'from': 'Carlisle', 'description': 'Both of our dogs have always been excited from when we turned off the main road and rushed into the kennels form the car. We couldn’t be happier.'},
+                {'title': 'Mrs Murray', 'from': 'Langholm', 'description': 'Our whippet loves these kennels. He looks like he’s had a great holiday whenever we pick him up.'},
+                {'title': 'Mrs Charmers', 'from': 'Egremont', 'description': 'We would have chosen some kennels a little closer but our local friends recommended Grays. We will always come back as Becky is never anything but happy when she arrives.'}
+            ] %}
+            {% include 'includes/testimonials.twig' %}
+        </div>
+        <!-- /col-md-12 -->
+    </div>
+    <!-- /container -->
+
+</section>
+<!-- / Section Ends -->
+
+
+{% include 'includes/home-team.twig'%}
+
+
+<!-- Section Contact -->
+<section id="contact" class="dog-bg2 pt-0">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>Contact Us</h2>
+        </div>
+        <!-- /Section-heading -->
+    </div>
+    <!-- /container -->
+    <div class="container">
+        <div class="row">
+            <!-- contact info -->
+            <div class="contact-info col-lg-5 card bg-light-custom">
+                <h4>Send us a message</h4>
+                <!-- Form Starts -->
+                <div id="contact_form">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name<span class="required">*</span></label>
+                                <input type="text" name="name" class="form-control input-field" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" name="email" class="form-control input-field" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Subject</label>
+                                <input type="text" name="subject" class="form-control input-field">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Message<span class="required">*</span></label>
+                                <textarea name="message" id="message" class="textarea-field form-control" rows="3"  required=""></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" id="submit_btn" value="Submit" class="btn btn-primary">Send message</button>
+                    </div>
+                    <!-- Contact results -->
+                    <div id="contact_results"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <!-- map-->
+                <div id="map-canvas" class="mt-3 border-irregular1"></div>
+            </div>
+            <!-- /col-lg-->
+        </div>
+
+
+        <!-- /row-->
+        <div class="row res-margin mt-5">
+            <!-- /contact-icon-->
+            <div class="col-lg-6 mt-5">
+                <div class="contact-icon">
+                    <!---icon-->
+                    <i class="fa fa-phone top-icon"></i>
+                    <!-- contact-icon info-->
+                    <div class="contact-icon-info">
+                        <h5>Call us today</h5>
+                        <p class="h7">01228 711 119</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /contact-icon-->
+            <div class="col-lg-6 mt-5">
+                <div class="contact-icon">
+                    <!---icon-->
+                    <i class="fa fa-map-marker top-icon"></i>
+                    <!-- contact-icon info-->
+                    <div class="contact-icon-info">
+                        <h5>Visit us</h5>
+                        <p class="h7">Jeffreys Wood, Orton Grange, Carlisle, CA5 6JZ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+</section>
+<!-- /Section ends -->
+
+{% endblock %}
