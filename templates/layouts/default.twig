@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    {#<link rel="canonical" href="{{ request->getUri()->getBaseUrl() . '/'  }}" />#}
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <![endif]-->
@@ -14,204 +13,19 @@
     {% if meta_title is defined %}
     <title>{{ meta_title }}</title>
     {% endif %}
-    <!--[if lt IE 9]>
-    <script src="js/respond.js"></script>
-    <![endif]-->
-    <!-- Font files -->
-    <link href="http://fonts.googleapis.com/css?family=Sansita+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CQuicksand:400,500,700" rel="stylesheet">
-    <link href="fonts/flaticon/flaticon.css" rel="stylesheet" type="text/css">
-    <link href="fonts/fontawesome/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+    {#<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CQuicksand:400,500,700" rel="stylesheet">#}
     <!-- Fav icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    {#<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">#}
     <!-- style CSS -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- plugins CSS -->
-    <link href="css/plugins.css" rel="stylesheet">
-    <!-- Colors CSS -->
-    <link href="styles/grayskennels.css" rel="stylesheet">
-    <!-- LayerSlider CSS -->
-    <link rel="stylesheet" href="vendor/layerslider/css/layerslider.css">
-    <style>
-        .jumbotron {
-            background-image: url("../img/grays/slider5.png");
-            background-position: top;
-        }
-        figure.team-style2:before {
-            background: none;
-            border: none;
-            transform: none;
-            transition: none;
-        }
-        .navbar-brand span {
-            font-family: 'Sansita One', 'Quicksand', sans-serif;
-            font-weight: 300;
-            font-size: 40px;
-            letter-spacing: -3px;
-            text-transform: none;
-        }
-        .spacer {
-            margin-top: 3rem !important;
-        }
-        .nowrap {
-            white-space: nowrap;
-        }
-    </style>
+    {#<link href="css/style.css" rel="stylesheet">#}
 </head>
-<!-- ==== body starts ==== -->
-<body id="top">
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner">
-            <div class="bounce1"></div>
-        </div>
-        <!-- /spinner -->
-    </div>
 
-    <!-- /Preloader ends -->
-    <nav id="main-nav" class="navbar-expand-xl fixed-top">
-        <div class="row">
-            <!-- Start Top Bar -->
-            <div class="container-fluid top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details float-left">
-                                <li><i class="fa fa-map-marker"></i>Jeffreys Wood, Orton Grange, Carlisle.</li>
-                                <li><i class="fa fa-envelope"></i><a href="mailto:info@grayskennels.co.uk">info@grayskennels.co.uk</a></li>
-                                <li><i class="fa fa-phone"></i>01228 711 119</li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div>
-                        <!-- col-md-12 -->
-                    </div>
-                    <!-- /row -->
-                </div>
-                <!-- /container -->
-            </div>
-            <!-- End Top bar -->
-
-            <!-- Navbar Starts -->
-            <div class="navbar container-fluid">
-                <div class="container ">
-                    <!-- logo -->
-                    <a class="navbar-brand" href="/">
-                        <i class="flaticon-pawprint-4"></i><span>Gray's Kennels</span>
-                    </a>
-                    <!-- Navbartoggler -->
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggle-icon">
-                      <i class="fas fa-bars"></i>
-                      </span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-                            <!-- menu item -->
-                            <li class="nav-item {{ current_route == path_for('home') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ path_for('home') }}">Home</a>
-                            </li>
-                            <li class="nav-item {{ current_route == path_for('kennels') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ path_for('kennels') }}">Dog Boarding</a>
-                            </li>
-                            <li class="nav-item {{ current_route == path_for('grooming') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ path_for('grooming') }}">Pet Grooming</a>
-                            </li>
-                            <li class="nav-item {{ current_route == path_for('about') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ path_for('about') }}">About</a>
-                            </li>
-                            <li class="nav-item {{ current_route == path_for('contact') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{ path_for('contact') }}">Contact</a>
-                            </li>
-                        </ul>
-                        <!--/ul -->
-                    </div>
-                    <!--collapse -->
-                </div>
-                <!-- /container -->
-            </div>
-            <!-- /navbar -->
-        </div>
-        <!--/row -->
-    </nav>
-    <!-- /nav -->
-
+<body >
     {% block body %}{% endblock %}
-
-    <!-- ==== footer ==== -->
-    <footer class="text-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <a class="navbar-brand" href="{{ path_for('home') }}"><i class="fa"></i><span>Gray's Kennels</span></a>
-                    <p class="mt-3">Providing your pet with a safe and fun experience.</p>
-                </div>
-                <!--/ col-lg -->
-                <div class="col-lg-3">
-                    <h6><i class="fas fa-envelope margin-icon"></i>Contact Us</h6>
-                    <ul class="list-unstyled">
-                        <li>01228 711 119</li>
-                        <li><a href="mailto:info@grayskennels.co.uk">info@grayskennels.co.uk</a></li>
-                        <li>Jeffreys Wood, Orton Grange, Carlisle, Cumbria, CA5 6JZ.</li>
-                    </ul>
-                    <!--/ul -->
-                </div>
-                <!--/ col-lg -->
-                <div class="col-lg-3">
-                    <h6><i class="far fa-clock margin-icon"></i>Opening Hours</h6>
-                    <p>We're open all year round!</p>
-                    <ul class="list-unstyled">
-                        <li>Mon - Sat: 9am - 12pm, 1 - 6pm</li>
-                        <li>Sun: 9 - 11am, 3 - 5pm</li>
-                    </ul>
-                    <!--/ul -->
-                </div>
-                <!--/ col-lg -->
-            </div>
-            <!--/ row-->
-            <div class="row">
-                <div class="credits col-sm-12">
-                    <p>Copyright 2019 Gray's Kennels. All rights reserved.</p>
-                </div>
-            </div>
-            <!--/ row -->
-        </div>
-        <!--/ container -->
-        <!-- Go To Top Link -->
-        <div class="page-scroll hidden-sm hidden-xs">
-            <a href="#top" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-        </div>
-        <!--/page-scroll-->
-    </footer>
-    <!--/ footer-->
-
-    <!-- Bootstrap core & Jquery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Custom Js -->
-    <script src="js/custom.js"></script>
-    <script src="js/plugins.js"></script>
-    <!-- GreenSock -->
-    <script src="vendor/layerslider/js/greensock.js"></script>
-    <!-- LayerSlider script files -->
-    <script src="vendor/layerslider/js/layerslider.transitions.js"></script>
-    <script src="vendor/layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
-    <script src="vendor/layerslider/js/layerslider.load.js"></script>
-    <!-- Open Street maps: var coord = [54.85826,-3.01236]; -->
-    <script src="js/map.js"></script>
-    <!-- Mailchimp script -->
-    <script src="js/mailchimp.js"></script>
-    <!-- number counter script -->
-    <script src="js/counter.js"></script>
-    <!-- Contact Form script -->
-    <script src="js/contact.js"></script>
-    <!-- Prefix free -->
-    <script src="js/prefixfree.min.js"></script>
 </body>
 </html>
